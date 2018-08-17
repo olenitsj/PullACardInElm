@@ -31,5 +31,8 @@ displayCard = (div[ onClick ShowCard ][text ("This is a Card")])
 
 
 displayCards : comparable -> List (Html Msg)
-displayCards n = if n > 0 then 
-  displayCards (n-1) else []
+displayCards n =
+  if n > 1 then
+    displayCard :: displayCards (n-1)
+  else 
+    displayCard :: []
