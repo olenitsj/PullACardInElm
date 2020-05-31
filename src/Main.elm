@@ -7,9 +7,10 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import List.Extra exposing (..)
+import Random.List exposing (shuffle)
+import Random exposing (..)
 
-
-main : Program String Model Msg
+main : Program Int Model Msg
 main =
     Browser.element
         { init = init
@@ -29,7 +30,8 @@ type alias Card =
 
 
 type alias Model =
-    { cards : List Card
+    { initialCards : List Card
+    , randomCards : List Card
     , chosenCardIndex : Maybe Int
     , cardClicked : Bool
     }
@@ -58,14 +60,9 @@ cardOpenView card =
         ]
         []
 
-
-init : String -> ( Model, Cmd Msg )
-init flag =
-    let
-        initialWidgetStyle =
+initialWidgetStyle =
             Animation.style [ Animation.left (px 0.0), Animation.opacity 1.0, Animation.paddingTop (px 0), Animation.scale 1.0, Animation.rotate (turn 0.0)]
-    in
-    ( { cards =
+allCards =
             [ { url = "http://www.localhost/wp-content/uploads/2020/01/music-for-13-chakras-cover-1.jpg"
                 , name = "name"
                 , image = "image"
@@ -109,6 +106,12 @@ init flag =
               , index = 6
                 }
             ]
+
+getRandomCards cards seed =  Tuple.first (Random.step (shuffle cards) (Random.initialSeed seed))
+
+init : Int -> ( Model, Cmd Msg )
+init flag = ( { initialCards = allCards
+      , randomCards = getRandomCards allCards flag
       , chosenCardIndex = Nothing
       , cardClicked = False
       }
@@ -123,8 +126,7 @@ type Msg
     | Animate Animation.Msg
     | PullAndFlipCard Int
 
-emptyCmd a b c = (a b c, Cmd.none)
-
+emptyCmd a b = (a b, Cmd.none)
 
 pullAndFlipAnimation i = Animation.interrupt
             [ paddingTop 400 300
@@ -136,14 +138,14 @@ setChosenCardIndex model i =
 setCardClickedTrue model =
     { model | cardClicked = True }
 
-openCardAnimation i = Animation.interrupt
+openCardAnimation = Animation.interrupt
                     [ Animation.toWith
                         (Animation.speed { perSecond = 400 })
                         [ Animation.scale 3.0
                         ]
                     ]
 
-fadeInAnimation i = Animation.interrupt
+fadeInAnimation = Animation.interrupt
                     [ paddingTop 300 100
                     ]
 
@@ -152,7 +154,7 @@ paddingTop speed pixels = Animation.toWith
                         [ Animation.paddingTop (px pixels)
                         ]
 
-fadeOutAnimation i = Animation.interrupt
+fadeOutAnimation = Animation.interrupt
                     [ paddingTop 500 100
                     , paddingTop 500 0
                     ]
@@ -160,20 +162,20 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         ShowCard i -> 
-            let (a, b) = (onCardStyle model i <| emptyCmd openCardAnimation i)
+            let (a, b) = (onCardStyle model i <| emptyCmd openCardAnimation)
             in (setChosenCardIndex a i, b)
         FadeIn i ->
-            ( onCardStyle model i <| emptyCmd fadeInAnimation i)
+            ( onCardStyle model i <| emptyCmd fadeInAnimation)
         FadeOut i ->
             ( onCardStyle model i <|
-              emptyCmd fadeOutAnimation i
+              emptyCmd fadeOutAnimation
             )
         PullAndFlipCard i -> 
-           let (a, b) = ( onCardStyle model i <| emptyCmd pullAndFlipAnimation i)
+           let (a, b) = ( onCardStyle model i <| emptyCmd (pullAndFlipAnimation i))
            in (setCardClickedTrue a, b)
         Animate time ->
-            let (a, b) = List.unzip (List.map (onStyle <| Animation.Messenger.update <| time) model.cards)
-            in ( { model | cards = a}
+            let (a, b) = List.unzip (List.map (onStyle <| Animation.Messenger.update <| time) model.randomCards)
+            in ( { model | randomCards = a}
             , Cmd.batch b )
 
 onIndex : Int -> List a -> (a -> (a, Cmd Msg)) -> (List a, List (Cmd Msg))
@@ -192,18 +194,18 @@ onIndex i list fn =
 onStyle : (Animation.Messenger.State Msg -> (Animation.Messenger.State Msg, Cmd Msg)) -> Card -> (Card, Cmd Msg)
 onStyle styleFn card =
     let (newCard, cmd) = styleFn card.style 
-    in 
-        ({ card | style = newCard }, cmd)
+    in  ({ card | style = newCard }, cmd)
 
 
 onCardStyle : Model -> Int -> (Animation.Messenger.State Msg -> (Animation.Messenger.State Msg, Cmd Msg)) -> (Model, Cmd Msg)
-onCardStyle model index fn = let (a, b) = onIndex index model.cards <| onStyle fn
-   in  ({ model | cards = a}, Cmd.batch b)
+onCardStyle model index fn = 
+    let (newCard, cmd) = onIndex index model.randomCards <| onStyle fn
+    in  ({ model | randomCards = newCard}, Cmd.batch cmd)
 
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    Animation.subscription Animate <| List.map .style model.cards
+    Animation.subscription Animate <| List.map .style model.randomCards
 
 
 view : Model -> Html Msg
@@ -216,7 +218,7 @@ view model =
                     Nothing ->
                         if model.cardClicked then viewChosenCard cardClosedView card else viewCard card
             )
-            model.cards
+            model.randomCards
         )
 
 
