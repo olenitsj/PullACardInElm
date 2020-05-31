@@ -120,11 +120,11 @@ init flag = ( { initialCards = allCards
 
 
 type Msg
-    = ShowCard Int
-    | FadeIn Int
-    | FadeOut Int
+    = ShowCard Card
+    | FadeIn Card
+    | FadeOut Card
     | Animate Animation.Msg
-    | PullAndFlipCard Int
+    | PullAndFlipCard Card
 
 emptyCmd a b = (a b, Cmd.none)
 
@@ -132,8 +132,8 @@ pullAndFlipAnimation i = Animation.interrupt
             [ paddingTop 400 300
             , Animation.Messenger.send (ShowCard i)
             ]
-setChosenCardIndex model i =
-    { model | chosenCardIndex = Just i }
+setChosenCardIndex model card =
+    { model | chosenCardIndex = Just card.index }
 
 setCardClickedTrue model =
     { model | cardClicked = True }
@@ -161,30 +161,29 @@ fadeOutAnimation = Animation.interrupt
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        ShowCard i -> 
-            let (a, b) = (onCardStyle model i <| emptyCmd openCardAnimation)
-            in (setChosenCardIndex a i, b)
-        FadeIn i ->
-            ( onCardStyle model i <| emptyCmd fadeInAnimation)
-        FadeOut i ->
-            ( onCardStyle model i <|
+        ShowCard card -> 
+            let (a, b) = (onCardStyle model card <| emptyCmd openCardAnimation)
+            in (setChosenCardIndex a card, b)
+        FadeIn card ->
+            ( onCardStyle model card <| emptyCmd fadeInAnimation)
+        FadeOut card ->
+            ( onCardStyle model card <|
               emptyCmd fadeOutAnimation
             )
-        PullAndFlipCard i -> 
-           let (a, b) = ( onCardStyle model i <| emptyCmd (pullAndFlipAnimation i))
+        PullAndFlipCard card -> 
+           let (a, b) = ( onCardStyle model card <| emptyCmd (pullAndFlipAnimation card))
            in (setCardClickedTrue a, b)
         Animate time ->
             let (a, b) = List.unzip (List.map (onStyle <| Animation.Messenger.update <| time) model.randomCards)
             in ( { model | randomCards = a}
             , Cmd.batch b )
 
-onIndex : Int -> List a -> (a -> (a, Cmd Msg)) -> (List a, List (Cmd Msg))
-onIndex i list fn =
-    List.unzip (List.indexedMap
-        (\j val ->
-            if i == j then
+onIndex : Card -> List Card -> (Card -> (Card, Cmd Msg)) -> (List Card, List (Cmd Msg))
+onIndex card list fn =
+    List.unzip (List.map
+        (\val ->
+            if card.index == val.index then
                 fn val
-
             else
                 (val, Cmd.none)
         )
@@ -197,9 +196,9 @@ onStyle styleFn card =
     in  ({ card | style = newCard }, cmd)
 
 
-onCardStyle : Model -> Int -> (Animation.Messenger.State Msg -> (Animation.Messenger.State Msg, Cmd Msg)) -> (Model, Cmd Msg)
-onCardStyle model index fn = 
-    let (newCard, cmd) = onIndex index model.randomCards <| onStyle fn
+onCardStyle : Model -> Card -> (Animation.Messenger.State Msg -> (Animation.Messenger.State Msg, Cmd Msg)) -> (Model, Cmd Msg)
+onCardStyle model card fn = 
+    let (newCard, cmd) = onIndex card model.randomCards <| onStyle fn
     in  ({ model | randomCards = newCard}, Cmd.batch cmd)
 
 
@@ -226,9 +225,9 @@ viewCard : Card -> Html Msg
 viewCard card =
     li
         (basicCardStyle card
-            ++ [ onMouseEnter (FadeIn card.index)
-               , onMouseLeave (FadeOut card.index)
-               , onClick (PullAndFlipCard card.index)
+            ++ [ onMouseEnter (FadeIn card)
+               , onMouseLeave (FadeOut card)
+               , onClick (PullAndFlipCard card)
                ]
         )
         [ cardClosedView card ]

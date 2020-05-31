@@ -11822,14 +11822,13 @@ var $elm$core$List$unzip = function (pairs) {
 		pairs);
 };
 var $author$project$Main$onIndex = F3(
-	function (i, list, fn) {
+	function (card, list, fn) {
 		return $elm$core$List$unzip(
 			A2(
-				$elm$core$List$indexedMap,
-				F2(
-					function (j, val) {
-						return _Utils_eq(i, j) ? fn(val) : _Utils_Tuple2(val, $elm$core$Platform$Cmd$none);
-					}),
+				$elm$core$List$map,
+				function (val) {
+					return _Utils_eq(card.index, val.index) ? fn(val) : _Utils_Tuple2(val, $elm$core$Platform$Cmd$none);
+				},
 				list));
 	});
 var $author$project$Main$onStyle = F2(
@@ -11844,10 +11843,10 @@ var $author$project$Main$onStyle = F2(
 			cmd);
 	});
 var $author$project$Main$onCardStyle = F3(
-	function (model, index, fn) {
+	function (model, card, fn) {
 		var _v0 = A3(
 			$author$project$Main$onIndex,
-			index,
+			card,
 			model.randomCards,
 			$author$project$Main$onStyle(fn));
 		var newCard = _v0.a;
@@ -11894,11 +11893,11 @@ var $author$project$Main$setCardClickedTrue = function (model) {
 		{cardClicked: true});
 };
 var $author$project$Main$setChosenCardIndex = F2(
-	function (model, i) {
+	function (model, card) {
 		return _Utils_update(
 			model,
 			{
-				chosenCardIndex: $elm$core$Maybe$Just(i)
+				chosenCardIndex: $elm$core$Maybe$Just(card.index)
 			});
 	});
 var $elm$core$List$partition = F2(
@@ -13405,39 +13404,39 @@ var $author$project$Main$update = F2(
 	function (msg, model) {
 		switch (msg.$) {
 			case 'ShowCard':
-				var i = msg.a;
+				var card = msg.a;
 				var _v1 = A3(
 					$author$project$Main$onCardStyle,
 					model,
-					i,
+					card,
 					$author$project$Main$emptyCmd($author$project$Main$openCardAnimation));
 				var a = _v1.a;
 				var b = _v1.b;
 				return _Utils_Tuple2(
-					A2($author$project$Main$setChosenCardIndex, a, i),
+					A2($author$project$Main$setChosenCardIndex, a, card),
 					b);
 			case 'FadeIn':
-				var i = msg.a;
+				var card = msg.a;
 				return A3(
 					$author$project$Main$onCardStyle,
 					model,
-					i,
+					card,
 					$author$project$Main$emptyCmd($author$project$Main$fadeInAnimation));
 			case 'FadeOut':
-				var i = msg.a;
+				var card = msg.a;
 				return A3(
 					$author$project$Main$onCardStyle,
 					model,
-					i,
+					card,
 					$author$project$Main$emptyCmd($author$project$Main$fadeOutAnimation));
 			case 'PullAndFlipCard':
-				var i = msg.a;
+				var card = msg.a;
 				var _v2 = A3(
 					$author$project$Main$onCardStyle,
 					model,
-					i,
+					card,
 					$author$project$Main$emptyCmd(
-						$author$project$Main$pullAndFlipAnimation(i)));
+						$author$project$Main$pullAndFlipAnimation(card)));
 				var a = _v2.a;
 				var b = _v2.b;
 				return _Utils_Tuple2(
@@ -14070,11 +14069,11 @@ var $author$project$Main$viewCard = function (card) {
 			_List_fromArray(
 				[
 					$elm$html$Html$Events$onMouseEnter(
-					$author$project$Main$FadeIn(card.index)),
+					$author$project$Main$FadeIn(card)),
 					$elm$html$Html$Events$onMouseLeave(
-					$author$project$Main$FadeOut(card.index)),
+					$author$project$Main$FadeOut(card)),
 					$elm$html$Html$Events$onClick(
-					$author$project$Main$PullAndFlipCard(card.index))
+					$author$project$Main$PullAndFlipCard(card))
 				])),
 		_List_fromArray(
 			[
@@ -14114,4 +14113,4 @@ var $author$project$Main$view = function (model) {
 };
 var $author$project$Main$main = $elm$browser$Browser$element(
 	{init: $author$project$Main$init, subscriptions: $author$project$Main$subscriptions, update: $author$project$Main$update, view: $author$project$Main$view});
-_Platform_export({'Main':{'init':$author$project$Main$main($elm$json$Json$Decode$int)({"versions":{"elm":"0.19.1"},"types":{"message":"Main.Msg","aliases":{"Animation.Msg":{"args":[],"type":"Animation.Model.Tick"}},"unions":{"Main.Msg":{"args":[],"tags":{"ShowCard":["Basics.Int"],"FadeIn":["Basics.Int"],"FadeOut":["Basics.Int"],"Animate":["Animation.Msg"],"PullAndFlipCard":["Basics.Int"]}},"Basics.Int":{"args":[],"tags":{"Int":[]}},"Animation.Model.Tick":{"args":[],"tags":{"Tick":["Time.Posix"]}},"Time.Posix":{"args":[],"tags":{"Posix":["Basics.Int"]}}}}})}});}(this));
+_Platform_export({'Main':{'init':$author$project$Main$main($elm$json$Json$Decode$int)({"versions":{"elm":"0.19.1"},"types":{"message":"Main.Msg","aliases":{"Main.Card":{"args":[],"type":"{ url : String.String, image : String.String, name : String.String, style : Animation.Messenger.State Main.Msg, index : Basics.Int }"},"Animation.Msg":{"args":[],"type":"Animation.Model.Tick"},"Animation.Messenger.State":{"args":["msg"],"type":"Animation.Model.Animation msg"},"Animation.Model.Timing":{"args":[],"type":"{ current : Time.Posix, dt : Time.Posix }"},"Animation.Model.Motion":{"args":[],"type":"{ position : Basics.Float, velocity : Basics.Float, target : Basics.Float, interpolation : Animation.Model.Interpolation, unit : String.String, interpolationOverride : Maybe.Maybe Animation.Model.Interpolation }"},"Animation.Model.ShadowMotion":{"args":[],"type":"{ offsetX : Animation.Model.Motion, offsetY : Animation.Model.Motion, size : Animation.Model.Motion, blur : Animation.Model.Motion, red : Animation.Model.Motion, green : Animation.Model.Motion, blue : Animation.Model.Motion, alpha : Animation.Model.Motion }"},"Animation.Model.ArcMotion":{"args":[],"type":"{ x : Animation.Model.Motion, y : Animation.Model.Motion, radius : Animation.Model.Motion, startAngle : Animation.Model.Motion, endAngle : Animation.Model.Motion }"},"Animation.Model.CubicCurveMotion":{"args":[],"type":"{ control1 : ( Animation.Model.Motion, Animation.Model.Motion ), control2 : ( Animation.Model.Motion, Animation.Model.Motion ), point : ( Animation.Model.Motion, Animation.Model.Motion ) }"},"Animation.Model.QuadraticCurveMotion":{"args":[],"type":"{ control : ( Animation.Model.Motion, Animation.Model.Motion ), point : ( Animation.Model.Motion, Animation.Model.Motion ) }"}},"unions":{"Main.Msg":{"args":[],"tags":{"ShowCard":["Main.Card"],"FadeIn":["Main.Card"],"FadeOut":["Main.Card"],"Animate":["Animation.Msg"],"PullAndFlipCard":["Main.Card"]}},"Animation.Model.Animation":{"args":["msg"],"tags":{"Animation":["{ steps : List.List (Animation.Model.Step msg), style : List.List Animation.Model.Property, timing : Animation.Model.Timing, running : Basics.Bool, interruption : List.List ( Time.Posix, List.List (Animation.Model.Step msg) ) }"]}},"Basics.Int":{"args":[],"tags":{"Int":[]}},"String.String":{"args":[],"tags":{"String":[]}},"Animation.Model.Tick":{"args":[],"tags":{"Tick":["Time.Posix"]}},"Basics.Bool":{"args":[],"tags":{"True":[],"False":[]}},"List.List":{"args":["a"],"tags":{}},"Time.Posix":{"args":[],"tags":{"Posix":["Basics.Int"]}},"Animation.Model.Property":{"args":[],"tags":{"ExactProperty":["String.String","String.String"],"ColorProperty":["String.String","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion"],"ShadowProperty":["String.String","Basics.Bool","Animation.Model.ShadowMotion"],"Property":["String.String","Animation.Model.Motion"],"Property2":["String.String","Animation.Model.Motion","Animation.Model.Motion"],"Property3":["String.String","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion"],"Property4":["String.String","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion"],"AngleProperty":["String.String","Animation.Model.Motion"],"Points":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"Path":["List.List Animation.Model.PathCommand"]}},"Animation.Model.Step":{"args":["msg"],"tags":{"Step":[],"To":["List.List Animation.Model.Property"],"ToWith":["List.List Animation.Model.Property"],"Set":["List.List Animation.Model.Property"],"Wait":["Time.Posix"],"Send":["msg"],"Repeat":["Basics.Int","List.List (Animation.Model.Step msg)"],"Loop":["List.List (Animation.Model.Step msg)"]}},"Basics.Float":{"args":[],"tags":{"Float":[]}},"Animation.Model.Interpolation":{"args":[],"tags":{"Spring":["{ stiffness : Basics.Float, damping : Basics.Float }"],"Easing":["{ progress : Basics.Float, duration : Time.Posix, start : Basics.Float, ease : Basics.Float -> Basics.Float }"],"AtSpeed":["{ perSecond : Basics.Float }"]}},"Maybe.Maybe":{"args":["a"],"tags":{"Just":["a"],"Nothing":[]}},"Animation.Model.PathCommand":{"args":[],"tags":{"Move":["Animation.Model.Motion","Animation.Model.Motion"],"MoveTo":["Animation.Model.Motion","Animation.Model.Motion"],"Line":["Animation.Model.Motion","Animation.Model.Motion"],"LineTo":["Animation.Model.Motion","Animation.Model.Motion"],"Horizontal":["Animation.Model.Motion"],"HorizontalTo":["Animation.Model.Motion"],"Vertical":["Animation.Model.Motion"],"VerticalTo":["Animation.Model.Motion"],"Curve":["Animation.Model.CubicCurveMotion"],"CurveTo":["Animation.Model.CubicCurveMotion"],"Quadratic":["Animation.Model.QuadraticCurveMotion"],"QuadraticTo":["Animation.Model.QuadraticCurveMotion"],"SmoothQuadratic":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"SmoothQuadraticTo":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"Smooth":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"SmoothTo":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"ClockwiseArc":["Animation.Model.ArcMotion"],"AntiClockwiseArc":["Animation.Model.ArcMotion"],"Close":[]}}}}})}});}(this));
