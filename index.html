@@ -8,9 +8,10 @@
 <body>
   <div id="pull-a-card"></div>
   <script>
+  var seed = Math.floor(Math.random() * (2147483646 - 1 + 1)) + 1;
   var app = Elm.Main.init({
     node: document.getElementById('pull-a-card'),
-    flags: 5
+    flags: seed
   });
   </script>
 </body>

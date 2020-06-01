@@ -11315,16 +11315,85 @@ var $author$project$Main$initialWidgetStyle = $mdgriffith$elm_style_animation$An
 			$mdgriffith$elm_style_animation$Animation$rotate(
 			$mdgriffith$elm_style_animation$Animation$turn(0.0))
 		]));
-var $author$project$Main$allCards = _List_fromArray(
+var $author$project$Main$aanvullendeRemediesCards = _List_fromArray(
 	[
-		{image: 'image', index: 0, name: 'name', style: $author$project$Main$initialWidgetStyle, url: 'http://www.localhost/wp-content/uploads/2020/01/music-for-13-chakras-cover-1.jpg'},
-		{image: 'image', index: 1, name: 'name', style: $author$project$Main$initialWidgetStyle, url: 'http://www.localhost/wp-content/uploads/2017/07/kaart-Kyron-facebook.jpg'},
-		{image: 'image', index: 2, name: 'name', style: $author$project$Main$initialWidgetStyle, url: 'http://www.localhost/wp-content/uploads/2019/11/remedies.png'},
-		{image: 'image', index: 3, name: 'name', style: $author$project$Main$initialWidgetStyle, url: 'http://www.localhost/wp-content/uploads/2019/11/remedies.png'},
-		{image: 'image', index: 4, name: 'name', style: $author$project$Main$initialWidgetStyle, url: 'http://www.localhost/wp-content/uploads/2019/11/remedies.png'},
-		{image: 'image', index: 5, name: 'name', style: $author$project$Main$initialWidgetStyle, url: 'http://www.localhost/wp-content/uploads/2019/11/remedies.png'},
-		{image: 'image', index: 6, name: 'name', style: $author$project$Main$initialWidgetStyle, url: 'http://www.localhost/wp-content/uploads/2019/11/remedies.png'}
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-Agnihotra.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/aanvullende-remedies/kaarten-agnihotra/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-levensbloem.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/aanvullende-remedies/kaarten-levensbloem/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/KaartenGOV.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/aanvullende-remedies/kaartengov/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/the-One.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/aanvullende-remedies/the-one/', style: $author$project$Main$initialWidgetStyle}
 	]);
+var $author$project$Main$chakrasremedies = _List_fromArray(
+	[
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra1.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakra-1stuitchakra-of-basischakra/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra2.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakra-2-heiligbeen-of-sacraalchakra/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra3.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakra-3-zonnevlechtchakra/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra4.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakra4-milt-of-middenrifchakra/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra5.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakra-5-hartchakra/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra6.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakra-6-thymuschakra/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra7.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakra-7-keelchakra/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra8.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakra-8-kosmische-doorstromingschakra-of-droomchakra/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra9.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakra-9-hypofysechakra/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra10.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakra-10-epifysechakra/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra11.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakra-11-kruinchakra/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra12.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakra-12-transformatiechakra-of-de-kosmische-vrouw/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra13.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakra-13-transmutatiechakra-of-de-kosmische-man/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2018/04/Kaarten-Chakra-balans.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/13-chakras-remedies/chakrabalans/', style: $author$project$Main$initialWidgetStyle}
+	]);
+var $author$project$Main$fotonengordelCards = _List_fromArray(
+	[
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GF-Fotonengordel-web.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/fotonengordelremedie/kaarten-gf-fotonengordel-web/', style: $author$project$Main$initialWidgetStyle}
+	]);
+var $author$project$Main$grootmoederCards = _List_fromArray(
+	[
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GM1.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gm1/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GM2.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gm2/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GM3.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gm3/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GM4.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gm4/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GM5.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gm5/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GM6.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gm6/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GM7.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gm7/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GM8.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gm8/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GM9.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gm9/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GM10.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gm10/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GM11.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gm11/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GM12.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gm12/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GM13.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gm13/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GMF.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootmoederremedies/kaarten-gmf/', style: $author$project$Main$initialWidgetStyle}
+	]);
+var $author$project$Main$grootvaderCards = _List_fromArray(
+	[
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GF1.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootvaderremedies/kaarten-gff/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GF2.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootvaderremedies/kaarten-gff/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GF3.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootvaderremedies/kaarten-gff/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GF4.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootvaderremedies/kaarten-gf5/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GF5.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootvaderremedies/kaarten-gf5/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GF6.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootvaderremedies/kaarten-gf6/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GF7.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootvaderremedies/kaarten-gf7/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2015/11/Kaarten-GFF.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/de-grootvaderremedies/kaarten-gff/', style: $author$project$Main$initialWidgetStyle}
+	]);
+var $author$project$Main$nieuweTijdRemedies = _List_fromArray(
+	[
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2017/03/Annunaki.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/nieuwe-tijd-remedies/annunaki/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2017/03/Ashtar.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/nieuwe-tijd-remedies/ashtar/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2017/03/Fusie-van-de-Zwarte-Gaten-.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/nieuwe-tijd-remedies/de-fusie-van-de-zwarte-gaten/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2019/11/Kaart-hoeders-van-de-aarde-E1-pdf.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/nieuwe-tijd-remedies/de-hoeders-van-de-aarde/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2017/03/Gor.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/nieuwe-tijd-remedies/gor/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2017/03/Ho%E2%80%99Oponopono-.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/nieuwe-tijd-remedies/hooponopono/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2017/07/kaart-Kyron-facebook.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/nieuwe-tijd-remedies/kryon/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2017/03/Merlijn.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/nieuwe-tijd-remedies/merlijn/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2017/03/Passie8.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/nieuwe-tijd-remedies/passie/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2017/03/godsvonk.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/nieuwe-tijd-remedies/verbinding-met-je-godsvonk/', style: $author$project$Main$initialWidgetStyle},
+		{imageUrl: 'https://www.13grandmothersremedies.com/wp-content/uploads/2017/03/Yrtl.jpg', productUrl: 'https://www.13grandmothersremedies.com/producten/nieuwe-tijd-remedies/yrtl/', style: $author$project$Main$initialWidgetStyle}
+	]);
+var $author$project$Main$allCards = _Utils_ap(
+	$author$project$Main$grootmoederCards,
+	_Utils_ap(
+		$author$project$Main$grootvaderCards,
+		_Utils_ap(
+			$author$project$Main$fotonengordelCards,
+			_Utils_ap(
+				$author$project$Main$aanvullendeRemediesCards,
+				_Utils_ap($author$project$Main$nieuweTijdRemedies, $author$project$Main$chakrasremedies)))));
 var $elm$random$Random$Seed = F2(
 	function (a, b) {
 		return {$: 'Seed', a: a, b: b};
@@ -11544,18 +11613,147 @@ var $elm$random$Random$step = F2(
 		var generator = _v0.a;
 		return generator(seed);
 	});
+var $elm$core$List$takeReverse = F3(
+	function (n, list, kept) {
+		takeReverse:
+		while (true) {
+			if (n <= 0) {
+				return kept;
+			} else {
+				if (!list.b) {
+					return kept;
+				} else {
+					var x = list.a;
+					var xs = list.b;
+					var $temp$n = n - 1,
+						$temp$list = xs,
+						$temp$kept = A2($elm$core$List$cons, x, kept);
+					n = $temp$n;
+					list = $temp$list;
+					kept = $temp$kept;
+					continue takeReverse;
+				}
+			}
+		}
+	});
+var $elm$core$List$takeTailRec = F2(
+	function (n, list) {
+		return $elm$core$List$reverse(
+			A3($elm$core$List$takeReverse, n, list, _List_Nil));
+	});
+var $elm$core$List$takeFast = F3(
+	function (ctr, n, list) {
+		if (n <= 0) {
+			return _List_Nil;
+		} else {
+			var _v0 = _Utils_Tuple2(n, list);
+			_v0$1:
+			while (true) {
+				_v0$5:
+				while (true) {
+					if (!_v0.b.b) {
+						return list;
+					} else {
+						if (_v0.b.b.b) {
+							switch (_v0.a) {
+								case 1:
+									break _v0$1;
+								case 2:
+									var _v2 = _v0.b;
+									var x = _v2.a;
+									var _v3 = _v2.b;
+									var y = _v3.a;
+									return _List_fromArray(
+										[x, y]);
+								case 3:
+									if (_v0.b.b.b.b) {
+										var _v4 = _v0.b;
+										var x = _v4.a;
+										var _v5 = _v4.b;
+										var y = _v5.a;
+										var _v6 = _v5.b;
+										var z = _v6.a;
+										return _List_fromArray(
+											[x, y, z]);
+									} else {
+										break _v0$5;
+									}
+								default:
+									if (_v0.b.b.b.b && _v0.b.b.b.b.b) {
+										var _v7 = _v0.b;
+										var x = _v7.a;
+										var _v8 = _v7.b;
+										var y = _v8.a;
+										var _v9 = _v8.b;
+										var z = _v9.a;
+										var _v10 = _v9.b;
+										var w = _v10.a;
+										var tl = _v10.b;
+										return (ctr > 1000) ? A2(
+											$elm$core$List$cons,
+											x,
+											A2(
+												$elm$core$List$cons,
+												y,
+												A2(
+													$elm$core$List$cons,
+													z,
+													A2(
+														$elm$core$List$cons,
+														w,
+														A2($elm$core$List$takeTailRec, n - 4, tl))))) : A2(
+											$elm$core$List$cons,
+											x,
+											A2(
+												$elm$core$List$cons,
+												y,
+												A2(
+													$elm$core$List$cons,
+													z,
+													A2(
+														$elm$core$List$cons,
+														w,
+														A3($elm$core$List$takeFast, ctr + 1, n - 4, tl)))));
+									} else {
+										break _v0$5;
+									}
+							}
+						} else {
+							if (_v0.a === 1) {
+								break _v0$1;
+							} else {
+								break _v0$5;
+							}
+						}
+					}
+				}
+				return list;
+			}
+			var _v1 = _v0.b;
+			var x = _v1.a;
+			return _List_fromArray(
+				[x]);
+		}
+	});
+var $elm$core$List$take = F2(
+	function (n, list) {
+		return A3($elm$core$List$takeFast, 0, n, list);
+	});
 var $author$project$Main$getRandomCards = F2(
 	function (cards, seed) {
 		return A2(
-			$elm$random$Random$step,
-			$elm_community$random_extra$Random$List$shuffle(cards),
-			$elm$random$Random$initialSeed(seed)).a;
+			$elm$core$List$take,
+			7,
+			A2(
+				$elm$random$Random$step,
+				$elm_community$random_extra$Random$List$shuffle(cards),
+				$elm$random$Random$initialSeed(seed)).a);
 	});
 var $author$project$Main$init = function (flag) {
 	return _Utils_Tuple2(
 		{
 			cardClicked: false,
-			chosenCardIndex: $elm$core$Maybe$Nothing,
+			chosenCard: $elm$core$Maybe$Nothing,
 			initialCards: $author$project$Main$allCards,
 			randomCards: A2($author$project$Main$getRandomCards, $author$project$Main$allCards, flag)
 		},
@@ -11827,7 +12025,7 @@ var $author$project$Main$onIndex = F3(
 			A2(
 				$elm$core$List$map,
 				function (val) {
-					return _Utils_eq(card.index, val.index) ? fn(val) : _Utils_Tuple2(val, $elm$core$Platform$Cmd$none);
+					return _Utils_eq(card.imageUrl, val.imageUrl) ? fn(val) : _Utils_Tuple2(val, $elm$core$Platform$Cmd$none);
 				},
 				list));
 	});
@@ -11892,12 +12090,12 @@ var $author$project$Main$setCardClickedTrue = function (model) {
 		model,
 		{cardClicked: true});
 };
-var $author$project$Main$setChosenCardIndex = F2(
+var $author$project$Main$setChosenCard = F2(
 	function (model, card) {
 		return _Utils_update(
 			model,
 			{
-				chosenCardIndex: $elm$core$Maybe$Just(card.index)
+				chosenCard: $elm$core$Maybe$Just(card.imageUrl)
 			});
 	});
 var $elm$core$List$partition = F2(
@@ -13413,7 +13611,7 @@ var $author$project$Main$update = F2(
 				var a = _v1.a;
 				var b = _v1.b;
 				return _Utils_Tuple2(
-					A2($author$project$Main$setChosenCardIndex, a, card),
+					A2($author$project$Main$setChosenCard, a, card),
 					b);
 			case 'FadeIn':
 				var card = msg.a;
@@ -13498,7 +13696,7 @@ var $author$project$Main$cardOpenView = function (card) {
 		$elm$html$Html$img,
 		_List_fromArray(
 			[
-				$elm$html$Html$Attributes$src(card.url),
+				$elm$html$Html$Attributes$src(card.imageUrl),
 				$elm$html$Html$Attributes$width(200),
 				$elm$html$Html$Attributes$height(200),
 				A2($elm$html$Html$Attributes$style, 'z-index', '3000'),
@@ -14046,7 +14244,8 @@ var $author$project$Main$basicCardStyle = function (card) {
 				A2($elm$html$Html$Attributes$style, 'cursor', 'pointer'),
 				A2($elm$html$Html$Attributes$style, 'margin-bottom', '10px'),
 				A2($elm$html$Html$Attributes$style, 'margin-left', '-14.5%'),
-				A2($elm$html$Html$Attributes$style, 'vertical-align', 'top')
+				A2($elm$html$Html$Attributes$style, 'vertical-align', 'top'),
+				A2($elm$html$Html$Attributes$style, 'position', 'relative')
 			]));
 };
 var $elm$html$Html$Events$onMouseEnter = function (msg) {
@@ -14101,10 +14300,10 @@ var $author$project$Main$view = function (model) {
 		A2(
 			$elm$core$List$map,
 			function (card) {
-				var _v0 = model.chosenCardIndex;
+				var _v0 = model.chosenCard;
 				if (_v0.$ === 'Just') {
-					var i = _v0.a;
-					return _Utils_eq(i, card.index) ? A2($author$project$Main$viewChosenCard, $author$project$Main$cardOpenView, card) : A2($author$project$Main$viewChosenCard, $author$project$Main$cardClosedView, card);
+					var url = _v0.a;
+					return _Utils_eq(url, card.imageUrl) ? A2($author$project$Main$viewChosenCard, $author$project$Main$cardOpenView, card) : A2($author$project$Main$viewChosenCard, $author$project$Main$cardClosedView, card);
 				} else {
 					return model.cardClicked ? A2($author$project$Main$viewChosenCard, $author$project$Main$cardClosedView, card) : $author$project$Main$viewCard(card);
 				}
@@ -14113,4 +14312,4 @@ var $author$project$Main$view = function (model) {
 };
 var $author$project$Main$main = $elm$browser$Browser$element(
 	{init: $author$project$Main$init, subscriptions: $author$project$Main$subscriptions, update: $author$project$Main$update, view: $author$project$Main$view});
-_Platform_export({'Main':{'init':$author$project$Main$main($elm$json$Json$Decode$int)({"versions":{"elm":"0.19.1"},"types":{"message":"Main.Msg","aliases":{"Main.Card":{"args":[],"type":"{ url : String.String, image : String.String, name : String.String, style : Animation.Messenger.State Main.Msg, index : Basics.Int }"},"Animation.Msg":{"args":[],"type":"Animation.Model.Tick"},"Animation.Messenger.State":{"args":["msg"],"type":"Animation.Model.Animation msg"},"Animation.Model.Timing":{"args":[],"type":"{ current : Time.Posix, dt : Time.Posix }"},"Animation.Model.Motion":{"args":[],"type":"{ position : Basics.Float, velocity : Basics.Float, target : Basics.Float, interpolation : Animation.Model.Interpolation, unit : String.String, interpolationOverride : Maybe.Maybe Animation.Model.Interpolation }"},"Animation.Model.ShadowMotion":{"args":[],"type":"{ offsetX : Animation.Model.Motion, offsetY : Animation.Model.Motion, size : Animation.Model.Motion, blur : Animation.Model.Motion, red : Animation.Model.Motion, green : Animation.Model.Motion, blue : Animation.Model.Motion, alpha : Animation.Model.Motion }"},"Animation.Model.ArcMotion":{"args":[],"type":"{ x : Animation.Model.Motion, y : Animation.Model.Motion, radius : Animation.Model.Motion, startAngle : Animation.Model.Motion, endAngle : Animation.Model.Motion }"},"Animation.Model.CubicCurveMotion":{"args":[],"type":"{ control1 : ( Animation.Model.Motion, Animation.Model.Motion ), control2 : ( Animation.Model.Motion, Animation.Model.Motion ), point : ( Animation.Model.Motion, Animation.Model.Motion ) }"},"Animation.Model.QuadraticCurveMotion":{"args":[],"type":"{ control : ( Animation.Model.Motion, Animation.Model.Motion ), point : ( Animation.Model.Motion, Animation.Model.Motion ) }"}},"unions":{"Main.Msg":{"args":[],"tags":{"ShowCard":["Main.Card"],"FadeIn":["Main.Card"],"FadeOut":["Main.Card"],"Animate":["Animation.Msg"],"PullAndFlipCard":["Main.Card"]}},"Animation.Model.Animation":{"args":["msg"],"tags":{"Animation":["{ steps : List.List (Animation.Model.Step msg), style : List.List Animation.Model.Property, timing : Animation.Model.Timing, running : Basics.Bool, interruption : List.List ( Time.Posix, List.List (Animation.Model.Step msg) ) }"]}},"Basics.Int":{"args":[],"tags":{"Int":[]}},"String.String":{"args":[],"tags":{"String":[]}},"Animation.Model.Tick":{"args":[],"tags":{"Tick":["Time.Posix"]}},"Basics.Bool":{"args":[],"tags":{"True":[],"False":[]}},"List.List":{"args":["a"],"tags":{}},"Time.Posix":{"args":[],"tags":{"Posix":["Basics.Int"]}},"Animation.Model.Property":{"args":[],"tags":{"ExactProperty":["String.String","String.String"],"ColorProperty":["String.String","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion"],"ShadowProperty":["String.String","Basics.Bool","Animation.Model.ShadowMotion"],"Property":["String.String","Animation.Model.Motion"],"Property2":["String.String","Animation.Model.Motion","Animation.Model.Motion"],"Property3":["String.String","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion"],"Property4":["String.String","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion"],"AngleProperty":["String.String","Animation.Model.Motion"],"Points":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"Path":["List.List Animation.Model.PathCommand"]}},"Animation.Model.Step":{"args":["msg"],"tags":{"Step":[],"To":["List.List Animation.Model.Property"],"ToWith":["List.List Animation.Model.Property"],"Set":["List.List Animation.Model.Property"],"Wait":["Time.Posix"],"Send":["msg"],"Repeat":["Basics.Int","List.List (Animation.Model.Step msg)"],"Loop":["List.List (Animation.Model.Step msg)"]}},"Basics.Float":{"args":[],"tags":{"Float":[]}},"Animation.Model.Interpolation":{"args":[],"tags":{"Spring":["{ stiffness : Basics.Float, damping : Basics.Float }"],"Easing":["{ progress : Basics.Float, duration : Time.Posix, start : Basics.Float, ease : Basics.Float -> Basics.Float }"],"AtSpeed":["{ perSecond : Basics.Float }"]}},"Maybe.Maybe":{"args":["a"],"tags":{"Just":["a"],"Nothing":[]}},"Animation.Model.PathCommand":{"args":[],"tags":{"Move":["Animation.Model.Motion","Animation.Model.Motion"],"MoveTo":["Animation.Model.Motion","Animation.Model.Motion"],"Line":["Animation.Model.Motion","Animation.Model.Motion"],"LineTo":["Animation.Model.Motion","Animation.Model.Motion"],"Horizontal":["Animation.Model.Motion"],"HorizontalTo":["Animation.Model.Motion"],"Vertical":["Animation.Model.Motion"],"VerticalTo":["Animation.Model.Motion"],"Curve":["Animation.Model.CubicCurveMotion"],"CurveTo":["Animation.Model.CubicCurveMotion"],"Quadratic":["Animation.Model.QuadraticCurveMotion"],"QuadraticTo":["Animation.Model.QuadraticCurveMotion"],"SmoothQuadratic":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"SmoothQuadraticTo":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"Smooth":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"SmoothTo":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"ClockwiseArc":["Animation.Model.ArcMotion"],"AntiClockwiseArc":["Animation.Model.ArcMotion"],"Close":[]}}}}})}});}(this));
+_Platform_export({'Main':{'init':$author$project$Main$main($elm$json$Json$Decode$int)({"versions":{"elm":"0.19.1"},"types":{"message":"Main.Msg","aliases":{"Main.Card":{"args":[],"type":"{ imageUrl : String.String, productUrl : String.String, style : Animation.Messenger.State Main.Msg }"},"Animation.Msg":{"args":[],"type":"Animation.Model.Tick"},"Animation.Messenger.State":{"args":["msg"],"type":"Animation.Model.Animation msg"},"Animation.Model.Timing":{"args":[],"type":"{ current : Time.Posix, dt : Time.Posix }"},"Animation.Model.Motion":{"args":[],"type":"{ position : Basics.Float, velocity : Basics.Float, target : Basics.Float, interpolation : Animation.Model.Interpolation, unit : String.String, interpolationOverride : Maybe.Maybe Animation.Model.Interpolation }"},"Animation.Model.ShadowMotion":{"args":[],"type":"{ offsetX : Animation.Model.Motion, offsetY : Animation.Model.Motion, size : Animation.Model.Motion, blur : Animation.Model.Motion, red : Animation.Model.Motion, green : Animation.Model.Motion, blue : Animation.Model.Motion, alpha : Animation.Model.Motion }"},"Animation.Model.ArcMotion":{"args":[],"type":"{ x : Animation.Model.Motion, y : Animation.Model.Motion, radius : Animation.Model.Motion, startAngle : Animation.Model.Motion, endAngle : Animation.Model.Motion }"},"Animation.Model.CubicCurveMotion":{"args":[],"type":"{ control1 : ( Animation.Model.Motion, Animation.Model.Motion ), control2 : ( Animation.Model.Motion, Animation.Model.Motion ), point : ( Animation.Model.Motion, Animation.Model.Motion ) }"},"Animation.Model.QuadraticCurveMotion":{"args":[],"type":"{ control : ( Animation.Model.Motion, Animation.Model.Motion ), point : ( Animation.Model.Motion, Animation.Model.Motion ) }"}},"unions":{"Main.Msg":{"args":[],"tags":{"ShowCard":["Main.Card"],"FadeIn":["Main.Card"],"FadeOut":["Main.Card"],"Animate":["Animation.Msg"],"PullAndFlipCard":["Main.Card"]}},"Animation.Model.Animation":{"args":["msg"],"tags":{"Animation":["{ steps : List.List (Animation.Model.Step msg), style : List.List Animation.Model.Property, timing : Animation.Model.Timing, running : Basics.Bool, interruption : List.List ( Time.Posix, List.List (Animation.Model.Step msg) ) }"]}},"String.String":{"args":[],"tags":{"String":[]}},"Animation.Model.Tick":{"args":[],"tags":{"Tick":["Time.Posix"]}},"Basics.Bool":{"args":[],"tags":{"True":[],"False":[]}},"List.List":{"args":["a"],"tags":{}},"Time.Posix":{"args":[],"tags":{"Posix":["Basics.Int"]}},"Animation.Model.Property":{"args":[],"tags":{"ExactProperty":["String.String","String.String"],"ColorProperty":["String.String","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion"],"ShadowProperty":["String.String","Basics.Bool","Animation.Model.ShadowMotion"],"Property":["String.String","Animation.Model.Motion"],"Property2":["String.String","Animation.Model.Motion","Animation.Model.Motion"],"Property3":["String.String","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion"],"Property4":["String.String","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion","Animation.Model.Motion"],"AngleProperty":["String.String","Animation.Model.Motion"],"Points":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"Path":["List.List Animation.Model.PathCommand"]}},"Animation.Model.Step":{"args":["msg"],"tags":{"Step":[],"To":["List.List Animation.Model.Property"],"ToWith":["List.List Animation.Model.Property"],"Set":["List.List Animation.Model.Property"],"Wait":["Time.Posix"],"Send":["msg"],"Repeat":["Basics.Int","List.List (Animation.Model.Step msg)"],"Loop":["List.List (Animation.Model.Step msg)"]}},"Basics.Float":{"args":[],"tags":{"Float":[]}},"Basics.Int":{"args":[],"tags":{"Int":[]}},"Animation.Model.Interpolation":{"args":[],"tags":{"Spring":["{ stiffness : Basics.Float, damping : Basics.Float }"],"Easing":["{ progress : Basics.Float, duration : Time.Posix, start : Basics.Float, ease : Basics.Float -> Basics.Float }"],"AtSpeed":["{ perSecond : Basics.Float }"]}},"Maybe.Maybe":{"args":["a"],"tags":{"Just":["a"],"Nothing":[]}},"Animation.Model.PathCommand":{"args":[],"tags":{"Move":["Animation.Model.Motion","Animation.Model.Motion"],"MoveTo":["Animation.Model.Motion","Animation.Model.Motion"],"Line":["Animation.Model.Motion","Animation.Model.Motion"],"LineTo":["Animation.Model.Motion","Animation.Model.Motion"],"Horizontal":["Animation.Model.Motion"],"HorizontalTo":["Animation.Model.Motion"],"Vertical":["Animation.Model.Motion"],"VerticalTo":["Animation.Model.Motion"],"Curve":["Animation.Model.CubicCurveMotion"],"CurveTo":["Animation.Model.CubicCurveMotion"],"Quadratic":["Animation.Model.QuadraticCurveMotion"],"QuadraticTo":["Animation.Model.QuadraticCurveMotion"],"SmoothQuadratic":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"SmoothQuadraticTo":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"Smooth":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"SmoothTo":["List.List ( Animation.Model.Motion, Animation.Model.Motion )"],"ClockwiseArc":["Animation.Model.ArcMotion"],"AntiClockwiseArc":["Animation.Model.ArcMotion"],"Close":[]}}}}})}});}(this));
