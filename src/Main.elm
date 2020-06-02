@@ -36,7 +36,7 @@ type alias Model =
 cardClosedView : Card -> Html Msg
 cardClosedView card =
     img
-        [ src "http://www.localhost/wp-content/uploads/2015/11/LOGO-2.jpg"
+        [ src "http://13grandmothersremedies.com/wp-content/uploads/2015/11/LOGO-600x600.jpg"
         , width 200
         , height 200
         , style "z-index" "2006"
@@ -62,6 +62,7 @@ cardOpenView card =
 linkText : String
 linkText = "Klik hier om de bijhorende remedie te bekijken."
 
+initialWidgetStyle: Animation.Messenger.State Msg
 initialWidgetStyle =
             Animation.style [ Animation.left (px 0.0), Animation.opacity 1.0, Animation.paddingTop (px 0), Animation.rotate3d (turn 0) (turn 0) (turn 0), Animation.top (px 0)]
 
@@ -87,20 +88,23 @@ type Msg
 
 emptyCmd a b = (a b, Cmd.none)
 
-pullAndFlipAnimation i = Animation.interrupt
+pullAndFlipAnimation: Card -> Animation.Messenger.State Msg -> Animation.Messenger.State Msg
+pullAndFlipAnimation card = Animation.interrupt
             [ paddingTop 200 90
             , paddingTop 200 200
             , Animation.toWith (Animation.speed { perSecond = 6 }) [Animation.rotate3d (turn -0.25) (turn 0) (turn 0)]
-            , Animation.Messenger.send (ShowCard i)
+            , Animation.Messenger.send (ShowCard card)
             ]
 
 setChosenCard : Model -> Card -> Model 
 setChosenCard model card =
     { model | chosenCard = Just card.imageUrl }
 
+setCardClickedTrue: Model -> Model
 setCardClickedTrue model =
     { model | cardClicked = True }
 
+openCardAnimation: Animation.Messenger.State Msg -> Animation.Messenger.State Msg
 openCardAnimation = Animation.interrupt
                     [Animation.set
                         [ Animation.top (px 42)
@@ -109,7 +113,7 @@ openCardAnimation = Animation.interrupt
                         (Animation.speed { perSecond = 6 })
                         [Animation.rotate3d (turn 0) (turn 0) (turn 0)]
                     ]
-
+fadeInAnimation: Animation.Messenger.State Msg -> Animation.Messenger.State Msg
 fadeInAnimation = Animation.interrupt
                     [ paddingTop 150 42
                     ]
@@ -119,6 +123,7 @@ paddingTop speed pixels = Animation.toWith
                         [ Animation.top (px pixels)
                         ]
 
+fadeOutAnimation: Animation.Messenger.State Msg -> Animation.Messenger.State Msg
 fadeOutAnimation = Animation.interrupt
                     [ paddingTop 100 42
                     , paddingTop 100 0
@@ -197,6 +202,7 @@ viewCard card =
         )
         [ cardClosedView card ]
 
+basicCardStyle: Card -> List (Html.Attribute msgB)
 basicCardStyle card = Animation.render card.style ++ [ style "display" "inline-block"
                , style "list-style-type" "none"
                , style "cursor" "pointer"
